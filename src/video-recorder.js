@@ -20,7 +20,8 @@ class VideoRecorder {
   //  let options = {mimeType: 'video/webm'};
 
 //   let options = {mimeType: 'video/webm;codecs=h264'};
-   let options = {mimeType: 'video/webm;codecs=vp9'};
+   // let options = {mimeType: 'video/webm;codecs=vp9', videoBitsPerSecond: 16384000};
+   let options = {mimeType: 'video/webm', videoBitsPerSecond: 32768000};
 
     this.recordedBlobs = []
     try {
@@ -47,7 +48,7 @@ class VideoRecorder {
    console.log('Created MediaRecorder', this.mediaRecorder, 'with options', options);
    this.mediaRecorder.onstop = this._handleStop.bind(this)
    this.mediaRecorder.ondataavailable = this._handleDataAvailable.bind(this)
-   this.mediaRecorder.start(100) // collect 100ms of data
+   this.mediaRecorder.start(10) // collect 100ms of data
    console.log('MediaRecorder started', this.mediaRecorder)
  }
 

@@ -12,8 +12,8 @@ class HydraSynth {
 
   constructor ({
     pb = null,
-    width = 1280,
-    height = 720,
+    width = 3840,
+    height = 2160,
     numSources = 4,
     numOutputs = 4,
     makeGlobal = true,
@@ -122,7 +122,7 @@ class HydraSynth {
   _initRegl () {
     this.regl = require('regl')({
       canvas: this.canvas,
-      pixelRatio: 1,
+      pixelRatio: 8,
       extensions: [
         'oes_texture_half_float',
         'oes_texture_half_float_linear'
